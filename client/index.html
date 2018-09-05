@@ -15,8 +15,10 @@
     {{#each items}}
       <div class="row row-striped">
         <div class="col">{{id}}</div>
-        <div class="col">{{name}}</div>
         <div class="col">{{createdDate}}</div>
+        <div class="col">{{battery}}</div>
+        <div class="col">{{odometer}}</div>
+        <div class="col">{{comment}}</div>
         <div class="col"><span class="oi oi-delete deleteid" data-id="{{id}}"></span></div>
       </div>
     {{/each}}
@@ -24,6 +26,15 @@
 </head>
 <body>
   <div>
+      <form id="newChargeDAta" action="">
+          <label for="battery">Battery:</label>
+          <input type="text" class="form-control" id="battery" required digits min="0" max="100" >
+          <label for="odometer">Odometer:</label>
+          <input type="text" class="form-control" id="odometer" required digits min="0">
+          <label for="comment">Comment:</label>
+          <input type="text" class="form-control" id="comment">
+          <input type="submit" id="btnAdd" class="btn" value="Save">
+        </form>
     Messages will be printed to console.
     <div id="history" class="container"></div>
   </div>
